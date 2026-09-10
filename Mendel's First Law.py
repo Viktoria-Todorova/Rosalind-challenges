@@ -2,23 +2,6 @@
 
 
 """
-Let d: dominant, h: hetero, r: recessive
-Let a = k+m+n
-Let X = the r.v. associated with the first person randomly selected
-Let Y = the r.v. associated with the second person randomly selected without replacement
-Then:
-k = f_d => p(X=d) = k/a => p(Y=d| X=d) = (k-1)/(a-1) ,
-                           p(Y=h| X=d) = (m)/(a-1) ,
-                           p(Y=r| X=d) = (n)/(a-1)
-
-m = f_h => p(X=h) = m/a => p(Y=d| X=h) = (k)/(a-1) ,
-                           p(Y=h| X=h) = (m-1)/(a-1)
-                           p(Y=r| X=h) = (n)/(a-1)
-
-n = f_r => p(X=r) = n/a => p(Y=d| X=r) = (k)/(a-1) ,
-                           p(Y=h| X=r) = (m)/(a-1) ,
-                           p(Y=r| X=r) = (n-1)/(a-1)
-Now the joint would be:
                             |    offspring possibilites given X and Y choice
 -------------------------------------------------------------------------
 X Y |  P(X,Y)               |   d(dominant)     h(hetero)   r(recessive)
@@ -35,8 +18,7 @@ r d     n/a*(k)/(a-1)       |    0               0           0
 r h     n/a*(m)/(a-1)       |    0               1/2        1/2
 r r     n/a*(n-1)/(a-1)     |    0               0           1
 
-Here what we don't want is the element in the very last column where the offspring is completely recessive.
-so P = 1 - those situations as follow
+
 """
 
 # k=2  #AA
